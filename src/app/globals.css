@@ -6,9 +6,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body.hide-footer footer {
-  display: none;
-}
 
 :root {
   --foreground-rgb: 0, 0, 0;
