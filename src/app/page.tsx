@@ -1,4 +1,3 @@
-import Image from "next/image";
 import MainHero from "@/app/ui/main-hero";
 import OurMission from "@/app/ui/our-mission";
 import Articles from "@/app/ui/articles";
