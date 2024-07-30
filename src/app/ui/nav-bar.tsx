@@ -52,10 +52,10 @@ export default function NavBar() {
         </div>
         <div className="flex flex-1 items-center justify-end gap-x-6">
           <Link
-            href="/donate"
+            href="/aug6"
             className="rounded-md bg-customBlue px-3 py-2 sm:px-10 sm:py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
           >
-            Donate
+            Register
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -88,10 +88,10 @@ export default function NavBar() {
               />
             </Link>
             <Link
-              href="/donate"
+              href="/aug6"
               className="ml-auto rounded-md bg-customBlue px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
             >
-              Donate
+              Register
             </Link>
             <button
               type="button"
