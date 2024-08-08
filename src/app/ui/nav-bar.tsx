@@ -24,8 +24,8 @@ const navigation = [
 ];
 
 const events = [
-  { name: "August 6th", href: "/aug6" },
   { name: "August 8th", href: "/aug8" },
+  { name: "August 11th", href: "/aug11" },
 ];
 
 export default function NavBar() {
