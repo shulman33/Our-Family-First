@@ -7,9 +7,10 @@ export default function Testimonial() {
         <figure className="mt-10">
           <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
             <p>
-              "Couples that participated in the program responded that it had
-              saved their marriages, given them tools they truly needed and had
-              made them a stronger couple than ever before. You saved families"
+              &ldquo;Couples that participated in the program responded that it
+              had saved their marriages, given them tools they truly needed and
+              had made them a stronger couple than ever before. You saved
+              families&rdquo;
             </p>
           </blockquote>
           <figcaption className="mt-10">
