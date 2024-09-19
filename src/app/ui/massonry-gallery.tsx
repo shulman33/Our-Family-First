@@ -3,6 +3,15 @@
 import { useState } from "react";
 
 const images = [
+  "cta-1.jpg",
+  "cta-2.jpg",
+  "cta3.jpg",
+  "stickers.jpg",
+  "img11.jpg",
+  "img12.jpg",
+  "img13.jpg",
+  "img14.jpg",
+  "img15.jpg",
   "img1.jpg",
   "img2.jpg",
   "img3.jpg",
@@ -12,9 +21,8 @@ const images = [
   "img8.jpg",
   "PHOTO-2024-03-07-13-58-24.jpg",
   "PHOTO-2024-03-07-15-40-27.jpg",
-  "PHOTO-2024-05-11-14-27-49.jpg",
   "PHOTO-2024-07-20-17-36-20.jpg",
-  "PHOTO-2024-07-21-11-03-50.jpg",
+  "PHOTO-2024-07-21-11-03-50.jpg"
 ];
 
 export default function MasonryGallery() {
