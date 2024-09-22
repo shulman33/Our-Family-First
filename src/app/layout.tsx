@@ -20,15 +20,18 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://jewishlink.news/wp-content/uploads/Our-Family-First-Logo.jpg",
-        width: 800,
-        height: 600,
-        alt: "Our Family First",
+        url: "https://www.ourfamilyfirst.org/OFF-New-Logo.png",
+        width: 1200,
+        height: 630,
+        alt: "OUR FAMILY FIRST",
       },
     ],
   },
   icons: {
     icon: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon-76x76.png", sizes: "76x76" },
+    ],
   },
 };
 
