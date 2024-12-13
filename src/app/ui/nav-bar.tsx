@@ -47,7 +47,7 @@ export default function NavBar() {
             <span className="sr-only">Our Family First</span>
             <Image
               alt=""
-              src="/OFF-New-Logo.png"
+              src="/our-family-first-logo.png"
               width={75}
               height={68}
               className="h-12 w-auto"
@@ -118,7 +118,7 @@ export default function NavBar() {
               <span className="sr-only">Our Family First</span>
               <Image
                 alt=""
-                src="/OFF-New-Logo.png"
+                src="/our-family-first-logo.png"
                 width={75}
                 height={68}
                 className="h-10 w-auto"
