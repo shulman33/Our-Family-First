@@ -53,7 +53,7 @@ export default function Example() {
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
                   <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                    Support our <span className="text-customBlue">Heros</span>{" "}
+                    Support our <span className="text-customBlue">Heroes</span>{" "}
                     and their <span className="text-customBlue">Families</span>
                   </h1>
                   <p className="mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
