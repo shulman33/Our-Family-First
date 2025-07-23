@@ -12,7 +12,7 @@ const posts = [
     category: { title: "Profile", href: "#" },
   },
   {
-    id: 1,
+    id: 2,
     title:
       "Dozens of couples of soldiers and reserve officers participated on Shabbat to strengthen their relationship",
     href: "https://www.maariv.co.il/news/military/Article-1119075",
@@ -21,6 +21,29 @@ const posts = [
     imageUrl: "/article-2-cover.webp",
     date: "July 22, 2024",
     datetime: "2024-07-22",
+    category: { title: "Profile", href: "#" },
+  },
+  {
+    id: 3,
+    title:
+      "Our Family First Provides Respite for IDF Survivors of Gaza Building Collapse",
+    href: "https://jewishlink.news/our-family-first-provides-respite-for-idf-survivors-of-gaza-building-collapse/",
+    description:
+      "Our Family First offers support and healing for IDF soldiers who survived the tragic Gaza building collapse, providing essential respite and therapeutic care.",
+    imageUrl: "/article3.jpg",
+    date: "September 26, 2024",
+    datetime: "2024-09-26",
+    category: { title: "Profile", href: "#" },
+  },
+  {
+    id: 4,
+    title: "A Year of Hardship, Loss and Unwavering Commitment to Win the War",
+    href: "https://jewishlink.news/a-year-of-hardship-loss-and-unwavering-commitment-to-win-the-war/",
+    description:
+      "Reflecting on a year of challenges and resilience, Our Family First continues to support military families through their unwavering commitment to healing and strength during times of war.",
+    imageUrl: "/article4.jpg",
+    date: "June 5, 2025",
+    datetime: "2025-06-05",
     category: { title: "Profile", href: "#" },
   },
 ];
@@ -38,19 +61,21 @@ export default function Articles() {
             military families.
           </p>
         </div>
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <article
               key={post.id}
               className="flex flex-col items-start justify-between"
             >
-              <div className="relative w-full">
-                <img
-                  alt=""
-                  src={post.imageUrl}
-                  className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                />
-                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+              <div className="relative w-full overflow-hidden rounded-2xl">
+                <a href={post.href} className="block">
+                  <img
+                    alt=""
+                    src={post.imageUrl}
+                    className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] hover:opacity-90 hover:scale-105 transition-all duration-300 ease-in-out"
+                  />
+                </a>
+                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10 pointer-events-none" />
               </div>
               <div className="max-w-xl">
                 <div className="mt-8 flex items-center gap-x-4 text-xs">
