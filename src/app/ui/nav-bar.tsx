@@ -24,8 +24,7 @@ const navigation = [
 ];
 
 const events = [
-  { name: "August 8th", href: "/aug8" },
-  { name: "August 11th", href: "/aug11" },
+  { name: "August 10th", href: "/aug10" },
 ];
 
 export default function NavBar() {
@@ -33,7 +32,19 @@ export default function NavBar() {
 
   const handleMenuItemClick = (href: string) => {
     setMobileMenuOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    
+    // If it's a hash link, handle navigation appropriately
+    if (href.startsWith('#')) {
+      // Check if we're on the homepage
+      if (window.location.pathname === '/') {
+        // Same page, just scroll to the section
+        document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // Different page, navigate to homepage with hash
+        window.location.href = `/${href}`;
+      }
+    }
+    // For non-hash links, normal navigation will handle it
   };
 
   return (
@@ -60,6 +71,16 @@ export default function NavBar() {
               key={item.name}
               href={item.href}
               className="text-sm font-semibold leading-6 text-gray-900"
+              onClick={(e) => {
+                if (item.href.startsWith('#')) {
+                  e.preventDefault();
+                  if (window.location.pathname === '/') {
+                    document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
+                  } else {
+                    window.location.href = `/${item.href}`;
+                  }
+                }
+              }}
             >
               {item.name}
             </Link>
@@ -73,17 +94,20 @@ export default function NavBar() {
               />
             </PopoverButton>
             <PopoverPanel className="absolute z-10 mt-3 w-screen max-w-xs transform -translate-x-1/2 left-1/2 bg-white shadow-lg ring-1 ring-black ring-opacity-5 rounded-md">
-              <div className="p-4">
-                {events.map((event) => (
-                  <Link
-                    key={event.name}
-                    href={event.href}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md"
-                  >
-                    {event.name}
-                  </Link>
-                ))}
-              </div>
+              {({ close }) => (
+                <div className="p-4">
+                  {events.map((event) => (
+                    <Link
+                      key={event.name}
+                      href={event.href}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md"
+                      onClick={() => close()}
+                    >
+                      {event.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </PopoverPanel>
           </Popover>
         </div>
@@ -161,16 +185,23 @@ export default function NavBar() {
                     />
                   </PopoverButton>
                   <PopoverPanel className="mt-2 space-y-2 px-2">
-                    {events.map((event) => (
-                      <Link
-                        key={event.name}
-                        href={event.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                        onClick={() => handleMenuItemClick(event.href)}
-                      >
-                        {event.name}
-                      </Link>
-                    ))}
+                    {({ close }) => (
+                      <>
+                        {events.map((event) => (
+                          <Link
+                            key={event.name}
+                            href={event.href}
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            onClick={() => {
+                              handleMenuItemClick(event.href);
+                              close();
+                            }}
+                          >
+                            {event.name}
+                          </Link>
+                        ))}
+                      </>
+                    )}
                   </PopoverPanel>
                 </Popover>
               </div>
